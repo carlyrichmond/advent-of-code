@@ -3,7 +3,7 @@ def main():
     expenses = []
 
     ## To run with example use day-one-example.txt as input
-    for num in open("input/day-one.txt", "r"):
+    for num in open("2020/1/day-one.txt", "r"):
         expenses = expenses + [int(num)]
     
     expenses.sort()

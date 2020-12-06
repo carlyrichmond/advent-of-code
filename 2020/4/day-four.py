@@ -79,7 +79,7 @@ def main():
     current_attributes = {}
     valid_passport_count = 0
 
-    filename = "2020/input/day-four.txt"
+    filename = "2020/4/day-four.txt"
 
     # issue with checking the last passport
     # adding an extra new line to end of file to ensure it is validated

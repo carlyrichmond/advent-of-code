@@ -11,7 +11,7 @@ def checkSchemeTwo(password, letter, min, max):
 def main(): 
     matches = 0
     
-    for line in open("input/day-two.txt", "r"):
+    for line in open("2020/2/day-two.txt", "r"):
         parts = line.split(" ")
         counts = parts[0].split("-")
         

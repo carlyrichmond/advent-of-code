@@ -1,7 +1,7 @@
 def generate_matrix():
     tree_map = []
 
-    for line in open("2020/input/day-three.txt", "r"):
+    for line in open("2020/3/day-three.txt", "r"):
         tree_map = tree_map + [list(line.strip("\n"))]    
     
     return tree_map
