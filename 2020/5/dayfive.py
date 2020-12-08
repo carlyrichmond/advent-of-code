@@ -28,6 +28,7 @@ class Seat:
 class BinaryBoardingCalculator:
 
     def __init__(self):
+        self.seats = []
         self.input_path = "day-five-input.txt"
 
     def get_max_seat(self):
@@ -61,7 +62,9 @@ class BinaryBoardingCalculator:
             elif (b == "R"):
                 min_column = self.get_seat_range(min_column, max_column, False)
 
-        return Seat(min_row, min_column)
+        seat = Seat(min_row, min_column)
+        self.seats = self.seats + [seat]
+        return seat
 
     def get_seat_range(self, min, max, is_upper = True):
         base = (min + max)/2
@@ -71,8 +74,21 @@ class BinaryBoardingCalculator:
         
         return math.ceil(base)
 
+    def get_my_seat(self):
+        self.seats.sort()
+        previous_seat = self.seats[0]
+
+        for i in range(1, len(self.seats)):
+            difference = int(self.seats[i].seat_id) - int(previous_seat.seat_id)
+            if (difference > 1):
+               return previous_seat.seat_id + 1
+            previous_seat = self.seats[i]
+
 if __name__ == "__main__":
     calc = BinaryBoardingCalculator()
     max_seat = calc.get_max_seat()
 
     print(max_seat)
+
+    my_seat = calc.get_my_seat()
+    print(my_seat)

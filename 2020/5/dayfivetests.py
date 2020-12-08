@@ -48,5 +48,6 @@ class DayFiveTests(unittest.TestCase):
         self.assertEqual(result.column, expected_seat.column)
         self.assertEqual(result.seat_id, 820)
 
+
 if __name__ == "__main__":
     unittest.main()
